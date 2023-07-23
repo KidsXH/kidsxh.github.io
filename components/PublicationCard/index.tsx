@@ -7,7 +7,7 @@ type PublicationCardProps = Publication & {
 };
 
 export const PublicationCard = (props: PublicationCardProps) => {
-  const imageFile = `/images/${props.slug}/coverImage.png`
+  const imageFile = `/assets/${props.slug}/coverImage.png`;
   return (
     <div className='flex xl:flex-row flex-col shadow-md mb-1 p-2'>
       <div className='flex xl:w-52 w-full items-center px-2 mr-1'>
@@ -59,7 +59,7 @@ export const PublicationCard = (props: PublicationCardProps) => {
           )}
         </div>
         <div className='flex flex-row py-1'>
-          <Button>PDF</Button>
+          <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>
           <Button>Cite</Button>
           <Button>Video</Button>
           <Button>Code</Button>
@@ -71,8 +71,8 @@ export const PublicationCard = (props: PublicationCardProps) => {
 
 const Button = (props) => {
   return (
-    <div className='text-sm border leading-6 px-2 mr-2 rounded-md hover:cursor-pointer  hover:shadow-md hover:bg-slate-500 hover:text-slate-100 transition-colors select-none'>
-      {props.children}
+    <div className='text-sm border leading-6 px-2 mr-2 rounded-md hover:cursor-pointer  hover:shadow-md hover:bg-slate-500 hover:text-slate-100 transition-colors select-none nx-not-prose'>
+      <a href={`/assets/${props.slug}/${props.file}`}>{props.children}</a>
     </div>
   );
 };
