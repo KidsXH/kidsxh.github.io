@@ -12,7 +12,7 @@ export const PublicationCard = (props: PublicationCardProps) => {
     <div className='flex xl:flex-row flex-col shadow-md mb-1 p-2'>
       <div className='flex xl:w-52 w-full items-center px-2 mr-1'>
         <Image
-          className='w-full max-h-full m-auto'
+          className='w-full xl:max-h-[8rem] max-h-none m-auto'
           src={`${imageFile}`}
           width={1920}
           height={1080}
