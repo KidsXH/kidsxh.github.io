@@ -62,7 +62,7 @@ export const PublicationCard = (props: PublicationCardProps) => {
           <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>
           <Button>Cite</Button>
           <Button>Video</Button>
-          <Button>Code</Button>
+          <UrlButton url={props.code}>Code</UrlButton>
         </div>
       </div>
     </div>
@@ -73,6 +73,14 @@ const Button = (props) => {
   return (
     <div className='text-sm border leading-6 px-2 mr-2 rounded-md hover:cursor-pointer  hover:shadow-md hover:bg-slate-500 hover:text-slate-100 transition-colors select-none nx-not-prose'>
       <a href={`/assets/${props.slug}/${props.file}`}>{props.children}</a>
+    </div>
+  );
+};
+
+const UrlButton = (props) => {
+  return (
+    <div className='text-sm border leading-6 px-2 mr-2 rounded-md hover:cursor-pointer  hover:shadow-md hover:bg-slate-500 hover:text-slate-100 transition-colors select-none nx-not-prose'>
+      <a href={`${props.url}`}>{props.children}</a>
     </div>
   );
 };
