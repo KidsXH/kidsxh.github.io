@@ -10,16 +10,16 @@ export const PublicationCard = (props: PublicationCardProps) => {
   const imageFile = `/assets/${props.slug}/coverImage.png`;
   return (
     <div className='flex xl:flex-row flex-col shadow-md mb-1 p-2'>
-      <div className='flex xl:w-52 w-full items-center px-2 mr-1'>
+      <div className='flex xl:w-[200px] w-full items-center mr-2'>
         <Image
-          className='w-full xl:max-h-[8rem] max-h-none m-auto'
+          className='w-full xl:w-[192px] xl:h-[108px] max-h-none m-auto'
           src={`${imageFile}`}
           width={1920}
           height={1080}
           alt={props.title}
         ></Image>
       </div>
-      <div className='flex flex-col pt-2 xl:px-0 px-2'>
+      <div className='flex flex-col pt-2 xl:px-0 px-2 max-w-[800px]'>
         <div className='font-bold mb-2'>{props.title}</div>
         <div className='flex flex-row mb-2'>
           {props.authorsPrev && props.authorsPost ? (
@@ -57,6 +57,11 @@ export const PublicationCard = (props: PublicationCardProps) => {
               <span className='text-sm pr-1'>{props.venue}</span>
             </>
           )}
+          {
+            props.award ? (
+              <span className='text-sm font-bold pr-1'>{`🏅${props.award}`}</span>
+            ) : null
+          }
         </div>
         <div className='flex flex-row py-1'>
           <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>

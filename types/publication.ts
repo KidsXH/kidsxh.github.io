@@ -12,6 +12,7 @@ export type Publication = {
     video: string;
     published: boolean;
     coverImage: string;
+    award: string;
 }
 
 export const PublicationFields = [
@@ -26,5 +27,6 @@ export const PublicationFields = [
     'code',
     'video',
     'published',
-    'coverImage'
+    'coverImage',
+    'award'
 ];
