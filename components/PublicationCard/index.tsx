@@ -63,12 +63,12 @@ export const PublicationCard = (props: PublicationCardProps) => {
             ) : null
           }
         </div>
-        <div className='flex flex-row py-1'>
-          <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>
-          <Button>Cite</Button>
-          <Button>Video</Button>
-          <UrlButton url={props.code}>Code</UrlButton>
-        </div>
+        {/*<div className='flex flex-row py-1'>*/}
+        {/*  <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>*/}
+        {/*  <Button>Cite</Button>*/}
+        {/*  <Button>Video</Button>*/}
+        {/*  <UrlButton url={props.code}>Code</UrlButton>*/}
+        {/*</div>*/}
       </div>
     </div>
   );
