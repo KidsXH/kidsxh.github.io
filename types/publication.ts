@@ -13,6 +13,7 @@ export type Publication = {
     published: boolean;
     coverImage: string;
     award: string;
+    coFirstAuthor: boolean;
 }
 
 export const PublicationFields = [
@@ -28,5 +29,6 @@ export const PublicationFields = [
     'video',
     'published',
     'coverImage',
-    'award'
+    'award',
+    'coFirstAuthor'
 ];

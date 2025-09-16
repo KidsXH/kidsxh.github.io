@@ -25,22 +25,36 @@ export const PublicationCard = (props: PublicationCardProps) => {
           {props.authorsPrev && props.authorsPost ? (
             <div className='text-sm pr-1'>
               {props.authorsPrev + ', '}
-              <span className='font-bold'>{'Zhen Wen, '}</span>
+              <span className='font-bold'>
+                {'Zhen Wen'}
+                {props.coFirstAuthor && <span className='text-xs text-neutral-800 ml-0.5'>*</span>}
+                {', '}
+              </span>
               {props.authorsPost}
             </div>
           ) : props.authorsPost ? (
             <div className='text-sm pr-1'>
-              <span className='font-bold'>{'Zhen Wen, '}</span>
+              <span className='font-bold'>
+                {'Zhen Wen'}
+                {props.coFirstAuthor && <span className='text-xs text-neutral-800 ml-0.5'>*</span>}
+                {', '}
+              </span>
               {props.authorsPost}
             </div>
           ) : props.authorsPrev ? (
             <div className='text-sm pr-1'>
               {props.authorsPrev + ', '}
-              <span className='font-bold'>{'Zhen Wen'}</span>
+              <span className='font-bold'>
+                {'Zhen Wen'}
+                {props.coFirstAuthor && <span className='text-xs text-neutral-800 ml-0.5'>*</span>}
+              </span>
             </div>
           ) : (
             <div className='text-sm pr-1'>
-              <span className='font-bold'>{'Zhen Wen'}</span>
+              <span className='font-bold'>
+                {'Zhen Wen'}
+                {props.coFirstAuthor && <span className='text-xs text-neutral-800 ml-0.5'>*</span>}
+              </span>
             </div>
           )}
         </div>
@@ -63,6 +77,11 @@ export const PublicationCard = (props: PublicationCardProps) => {
             ) : null
           }
         </div>
+        {props.coFirstAuthor && (
+          <div className='text-xs text-neutral-800'>
+            * Co-first author
+          </div>
+        )}
         {/*<div className='flex flex-row py-1'>*/}
         {/*  <Button slug={props.slug} file={'full-paper.pdf'}>PDF</Button>*/}
         {/*  <Button>Cite</Button>*/}
