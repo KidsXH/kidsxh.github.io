@@ -23,15 +23,12 @@ const IconButton = ({ href, icon, label }: { href?: string; icon: string; label:
 
 type CardProps = {
   publication: Publication
-  showAbstract?: boolean
   showTags?: boolean
-  showLinks?: boolean
 }
 
 export function PublicationCard({
   publication,
   showTags = true,
-  showLinks = true,
 }: CardProps) {
   const { title, authors, venueAbbr, venue, date, award, tags, pdf, video, code, project, teaser, myIndex, coFirst, doi } = publication
   const linkItems = [
@@ -42,9 +39,11 @@ export function PublicationCard({
     { href: code, label: 'Code', icon: 'github' },
   ].filter(({ href }) => Boolean(href))
   return (
-    <div className="group relative flex w-full flex-col items-stretch gap-4 rounded-lg border border-(--border) bg-(--card) p-4 shadow-(--shadow) transition hover:border-(--accent) hover:shadow-[0_12px_36px_rgba(14,165,233,0.2)] hover:cursor-pointer md:flex-row md:items-start hover:translate-x-4">
+    <div className="group relative">
+      <div className="absolute -inset-4 -right-32 hidden md:block" />
+      <div className="relative flex w-full flex-col items-stretch gap-4 rounded-lg border border-(--border) bg-(--card) p-4 shadow-(--shadow) transition group-hover:border-(--accent) group-hover:shadow-[0_12px_36px_rgba(14,165,233,0.2)] group-hover:cursor-pointer md:flex-row md:items-start md:group-hover:translate-x-4 md:group-hover:translate-y-0 group-hover:-translate-y-1">
       {teaser ? (
-        <div className="flex h-[160px] w-full shrink-0 items-center justify-center overflow-hidden md:h-[140px] md:w-[220px]">
+        <div className="flex h-40 w-full shrink-0 items-center justify-center overflow-hidden md:h-35 md:w-55">
           <img
             src={teaser}
             alt={`${title} teaser`}
@@ -95,12 +94,13 @@ export function PublicationCard({
       </div>
 
       {linkItems.length ? (
-        <div className="pointer-events-none absolute -right-20 top-1/2 hidden -translate-y-1/2 -translate-x-full flex-col gap-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:-translate-x-6 md:flex">
+        <div className="pointer-events-none absolute -right-28 top-1/2 hidden -translate-y-1/2 -translate-x-full flex-col gap-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:-translate-x-6 md:flex">
           {linkItems.map(({ href, label, icon }) => (
             <IconButton key={label} href={href as string} icon={icon} label={label} />
           ))}
         </div>
       ) : null}
+      </div>
     </div>
   )
 }

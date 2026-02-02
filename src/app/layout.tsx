@@ -13,30 +13,32 @@ const roboto = Roboto({
   display: 'swap',
   variable: '--font-roboto',
 })
- 
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <Head backgroundColor={{ dark: '#0b1221', light: '#f8fafc' }} />
       <body className={roboto.className}>
-        <Layout>
-          <Navbar pageMap={await getPageMap()}>
-            {/* <Search /> */}
-            <ThemeSwitch />
-          </Navbar>
- 
-          {children}
- 
-          <Footer>
-            <abbr
-              title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-              style={{ cursor: 'help' }}
-            >
-              CC BY-NC 4.0
-            </abbr>{' '}
-            {new Date().getFullYear()} © Zhen Wen.
-          </Footer>
-        </Layout>
+        <main className='md:mx-25'>
+          <Layout>
+            <Navbar pageMap={await getPageMap()}>
+              {/* <Search /> */}
+              <ThemeSwitch />
+            </Navbar>
+
+            {children}
+
+            <Footer>
+              <abbr
+                title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+                style={{ cursor: 'help' }}
+              >
+                CC BY-NC 4.0
+              </abbr>{' '}
+              {new Date().getFullYear()} © Zhen Wen.
+            </Footer>
+          </Layout>
+        </main>
       </body>
     </html>
   )

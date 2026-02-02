@@ -11,7 +11,7 @@ export default async function Page() {
   return (
     <div className="flex flex-col gap-3 py-6">
       <h1 className="text-2xl font-semibold">Publications</h1>
-      <PublicationList publications={publications} showLinks={false}/>
+      <PublicationList publications={publications} groupByYear={true} />
     </div>
   )
 }
