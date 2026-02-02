@@ -7,11 +7,10 @@ export const inter = localFont({
   fallback: ['system-ui', 'sans-serif'],
 });
 
-export const jetbrains_mono = localFont({
-  src: '../public/fonts/Inter-roman.latin.var.woff2',
-  display: 'swap',
+// Use system monospace fonts as JetBrains Mono is not available locally
+export const jetbrains_mono = {
   variable: '--font-jetbrains-mono',
-  fallback: ['monospace'],
-});
+  style: { fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace' },
+};
 
-export default [inter, jetbrains_mono];
+export default [inter];

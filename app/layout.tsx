@@ -4,7 +4,7 @@ import {Head} from 'nextra/components';
 import {getPageMap} from 'nextra/page-map';
 import '../styles/nextra-theme.css';
 import '../styles/global.css';
-import {inter, jetbrains_mono} from '../styles/fonts';
+import {inter} from '../styles/fonts';
 
 export const metadata = {
   title: {
@@ -21,7 +21,7 @@ export default async function RootLayout({children}: {children: ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <Head backgroundColor={{dark: '#0f172a', light: '#fefce8'}} />
-      <body className={`${inter.variable} ${jetbrains_mono.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         <Layout>
           <Navbar pageMap={pageMap}>
             <ThemeSwitch />
