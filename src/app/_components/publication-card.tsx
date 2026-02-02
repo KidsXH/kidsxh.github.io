@@ -56,10 +56,10 @@ export function PublicationCard({
 
       <div className="flex min-w-0 flex-1 flex-col gap-2 mt-1 transition-transform">
         <header>
-          <div className="m-0 font-semibold text-[var(--foreground)]">{title} {award ? <span className='m-0 text-orange-400 font-semibold text-sm'>{'🏅' + award}</span> : ''}</div>
-          <div className='flex gap-1 mt-1'>
-            {venueAbbr ? <span className="text-sm text-[var(--muted)] font-semibold">{venueAbbr + ' · '}</span> : null}
-            {venue ? <span className="text-sm text-[var(--muted)] italic">{venue}
+          <div className="m-0 font-semibold text-foreground">{title} {award ? <span className='m-0 text-orange-400 font-semibold text-sm'>{'🏅' + award}</span> : ''}</div>
+          <div className='flex gap-1 mt-1 md:flex-row flex-col'>
+            {venueAbbr ? <span className="text-sm text-muted text-nowrap font-semibold">{venueAbbr}<span className='hidden md:inline'> · </span></span> : null}
+            {venue ? <span className="text-sm text-muted italic">{venue}
             </span> : null}
           </div>
 
