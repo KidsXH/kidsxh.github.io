@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build (static export via output: 'export')
+      - name: Build
         run: pnpm build
 
       - name: Upload artifact
