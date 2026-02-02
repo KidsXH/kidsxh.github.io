@@ -1,8 +1,0 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background circle -->
-    <circle cx="50" cy="50" r="45" fill="#000000" stroke="#ffffff" stroke-width="0" />
-
-    <!-- Scaled up paths with white stroke -->
-    <path d="M28 35L43 65L50 50L57 65L72 35" stroke="#ffffff" stroke-width="6" fill="none" />
-    <path d="M28 67L43 67L57 67L72 67" stroke="#ffffff" stroke-width="6" />
-</svg>
