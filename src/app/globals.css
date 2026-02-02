@@ -1,0 +1,60 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+@import "material-symbols/outlined.css";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --accent: #0ea5e9;
+  --accent-strong: #0284c7;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  --background: #0b1221;
+  --foreground: #e2e8f0;
+  --muted: #cbd5e1;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --border: #1e293b;
+  --card: #0f172a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+.x\:prose {
+  max-width: 900px;
+}
+
+@media (max-width: 900px) {
+  .x\:prose {
+    max-width: 100%;
+  }
+}
+
+/* Card and block surfaces inherit the theme background and border for better contrast */
+.x\:prose * {
+  border-color: var(--border);
+}
