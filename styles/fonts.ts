@@ -1,18 +1,17 @@
-import {Roboto, JetBrains_Mono} from 'next/font/google';
+import localFont from 'next/font/local';
 
-export const inter = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
+export const inter = localFont({
+  src: '../public/fonts/Inter-roman.latin.var.woff2',
   display: 'swap',
   variable: '--font-inter',
+  fallback: ['system-ui', 'sans-serif'],
 });
 
-export const jetbrains_mono = JetBrains_Mono({
-  subsets: ['latin'],
-    style: ['normal', 'italic'],
+export const jetbrains_mono = localFont({
+  src: '../public/fonts/Inter-roman.latin.var.woff2',
   display: 'swap',
   variable: '--font-jetbrains-mono',
+  fallback: ['monospace'],
 });
 
 export default [inter, jetbrains_mono];

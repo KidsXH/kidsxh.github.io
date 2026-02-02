@@ -46,5 +46,13 @@ img.next-image {
 }
 
 .nx-prose {
-  @apply max-w-prose xl:max-w-screen-lg mx-auto;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1280px) {
+  .nx-prose {
+    max-width: 1024px;
+  }
 }
