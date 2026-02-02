@@ -78,7 +78,7 @@ export const PublicationCard = (props: PublicationCardProps) => {
           }
         </div>
         {props.coFirstAuthor && (
-          <div className='text-xs text-neutral-800'>
+          <div className='text-xs text-neutral-800 dark:text-neutral-400'>
             * Co-first author
           </div>
         )}

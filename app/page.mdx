@@ -1,8 +1,14 @@
 ---
-type: page
 title: Zhen Wen
+description: Personal website of Zhen Wen
 date: 2023-07-22
 ---
+
+import {PublicationList} from '../components/PublicationList';
+import {getAllPosts} from '../lib/posts';
+import {PublicationFields} from '../types/publication';
+
+const allPosts = getAllPosts([...PublicationFields, 'slug']);
 
 # About Me
 
@@ -15,11 +21,7 @@ I am interested in enhancing software engineering workflows, both in the quantum
 
 ## Publications
 
-import { PublicationList } from "../components/PublicationList";
-
-<PublicationList posts={props.allPosts} />
-
-export { getStaticProps } from '../lib/posts.ts'
+<PublicationList posts={allPosts} />
 
 ---
 
