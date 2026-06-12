@@ -13,9 +13,7 @@ export default async function LatestPublications({ count = 3 }: { count?: number
       <h2 className="text-xl font-semibold mt-0">Recent Publications</h2>
       <PublicationList
         publications={publications}
-        showAbstract={false}
         showTags={false}
-        showLinks={true}
       />
     </section>
   )
