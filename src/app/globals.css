@@ -14,13 +14,13 @@
 }
 
 .dark {
-  --background: #0b1221;
-  --foreground: #e2e8f0;
-  --muted: #cbd5e1;
+  --background: #111418;
+  --foreground: #e6e9ed;
+  --muted: #b7bec7;
   --accent: #38bdf8;
   --accent-strong: #0ea5e9;
-  --border: #1e293b;
-  --card: #0f172a;
+  --border: #2a3038;
+  --card: #181c21;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 

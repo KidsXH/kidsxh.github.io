@@ -17,7 +17,7 @@ const roboto = Roboto({
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
-      <Head backgroundColor={{ dark: '#0b1221', light: '#f8fafc' }} />
+      <Head backgroundColor={{ dark: '#111418', light: '#f8fafc' }} />
       <body className={roboto.className}>
         <main className='md:mx-25'>
           <Layout>
